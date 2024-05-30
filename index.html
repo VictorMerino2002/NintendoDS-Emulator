@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/ds-icon.png">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/controls.css">
+    <link rel="stylesheet" href="style/gamesModal.css">
+    <link rel="stylesheet" href="style/Dscard.css">
+    <script src="https://kit.fontawesome.com/f865c48659.js" crossorigin="anonymous"></script>
+    <title>Nintendo DS</title>
+  </head>
+  <body>
+    <header class="controls">
+      <nav>
+        <button id="fullscreen-btn" class="blue"><i class="fa-solid fa-expand"></i>Full Screen</button>
+        <button id="switch-btn" class="orange"><i class="fa-solid fa-shuffle"></i> Switch Screen</button>
+        <button id="select-game-btn" class="green"><i class="fa-solid fa-gamepad"></i> Select Game</button>
+        <button id="load-save-btn" class="purple"><i class="fa-solid fa-upload"></i></i> Load Save <input type="file" name="" id="load-save-input" hidden></button>
+        <button id="download-save-btn" class="yellow"><i class="fa-solid fa-download"></i> Download Save</button>
+        
+        <div class="volume-controls">
+          <button id="mute-btn"><i class="fa-solid fa-volume-off"></i></button>
+          <button id="volume-down-btn"><i class="fa-solid fa-minus"></i></button>
+          <h3 id="volume-value">0</h3>
+          <button id="volume-up-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </nav>
+    </header>
+
+    <div id="select-game-modal">
+      <nav>
+        <h2>Select Game</h2>
+        <button id="close-game-modal"><i class="fa-solid fa-xmark"></i></button>
+      </nav>
+      <div id="games">
+        <button id="add-game">
+          <i class="fa-solid fa-plus"></i>
+          <input type="file" name="" id="input-game" hidden>
+        </button>
+      </div>
+    </div>
+
+    <div id="msg-layer" hidden="">
+        <p id="msg-text"></p>
+    </div>
+    <DS4WEB-player id="player" class="fullscreen"></DS4WEB-player>
+    <script src="script/emulator/DS4WEB.min.js"></script>
+    <script>
+        const stylesheet = document.createElement('link')
+        stylesheet.setAttribute('rel','stylesheet')
+        stylesheet.setAttribute('href','style/emulator.css')
+        document.getElementById("player").shadowRoot.appendChild(stylesheet)
+        document.getElementById('player').shadowRoot.getElementById('top').classList.add('top')
+        document.getElementById('player').shadowRoot.getElementById('bottom').classList.add('bottom')
+    </script>
+    <script src="script/emulator/Emulator.js"></script>
+    <script src="script/emulator/Fullscreen.js"></script>
+    <script src="script/emulator/FileManager.js"></script>
+    <script src="script/emulator/SelectGameModal.js"></script>
+    <script src="script/emulator/VolumeController.js"></script>
+    <script src="script/DsCard.js"></script>
+    <script src="script/main.js"></script>
+  </body>
+</html>

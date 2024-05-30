@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#top,#bottom {
+    aspect-ratio: 256 / 192;
+}
+
+.smallscreen#player {
+    display: grid;
+    grid-template-rows: 2fr 1.5fr;
+    place-content: center;
+    place-items: center;
+    gap: 10px;
+    height: 90%;
+    margin-top: 50px;
+}
+
+.smallscreen canvas {
+    height: 100%; 
+}
+
+.smallscreen.top {
+    grid-row: 1;
+}
+
+.smallscreen.bottom {
+    grid-row: 2;
+}
+
+.fullscreen {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+}
+
+.fullscreen canvas {
+    height: fit-content;
+    max-height: 100vh;
+}
+
+.fullscreen.top {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.fullscreen.bottom {
+    grid-column: 2;
+    grid-row: 1;
+}

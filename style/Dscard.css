@@ -1,0 +1,89 @@
+.scene {
+    width: 150px;
+    height: 150px;
+    perspective: 800px;
+  }
+
+  .scene:hover .cube{
+    animation: rotateY 3s infinite linear;
+  }
+
+  .scene:hover .cube div{
+    background: rgb(0, 54, 33);
+    border: 3px solid var(--green-2);
+  }
+
+  .cube {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+  }
+
+  .cube div {
+    position: absolute;
+    background: #222;
+    border: 3px solid #111;
+  }
+
+  .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(12.5px);
+  }
+
+  .front img {
+    width: 80%;
+  }
+
+  .front,.back {
+    width: 135px;
+    height: 150px;
+  }
+
+  .left,.right {
+    width: 25px;
+    height: 150px;
+  }
+
+  .top,.bottom {
+    width: 135px;
+    height: 25px;
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(12.5px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background: rgba(33, 150, 243, 0.8);
+    left: 85px;
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(100px);
+    background: rgba(255, 87, 34, 0.8);
+    left: 22.5px;
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(50px);
+    background: rgba(255, 235, 59, 0.8);
+    top: 40px;
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+    background: rgba(156, 39, 176, 0.8);
+    top: 85px;
+  }
+
+  @keyframes rotateY {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }

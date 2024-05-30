@@ -1,0 +1,74 @@
+.controls {
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    top: 0;
+}
+
+.controls nav {
+    position: absolute;
+    background: var(--sec-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top .3s linear;
+}
+
+.controls:hover nav {
+    top: 0;
+}
+
+button.blue:hover {
+    color: var(--blue-1);
+    background: var(--blue-2);
+}
+
+button.orange:hover {
+    color: var(--orange-1);
+    background: var(--orange-2);
+}
+
+button.green:hover {
+    color: var(--green-1);
+    background: var(--green-2);
+}
+
+button.purple:hover {
+    color: var(--purple-1);
+    background: var(--purple-2);
+}
+
+button.yellow:hover {
+    color: var(--yellow-1);
+    background: var(--yellow-2);
+}
+
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-controls:hover {
+    background: var(--cyan-2);
+}
+
+.volume-controls:hover button, .volume-controls:hover h3 {
+    color: var(--cyan-1);
+}
+
+.volume-controls #mute-btn {
+    width: 20px;
+}
+
+.volume-controls h3 {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
+}
